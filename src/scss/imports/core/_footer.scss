@@ -1,0 +1,56 @@
+.footer {
+    background: url('../images/background-footer.jpg') no-repeat;
+    background-size: cover;
+    &__social {
+        @include flex(null, center);
+        &-item {
+            display: block;
+            padding: 0 2.5rem;
+            @include xxs() {
+                padding: 0 1rem;
+            }
+            a {
+                @include size(3rem);
+                display: block;
+            }
+            &:hover {
+                a {
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+        }
+    }
+    &__menu {
+        border-top: 0.1rem solid;
+        border-bottom: 0.1rem solid;
+        margin-top: 4.8rem;
+        ul {
+            @include flex(null, center);
+            padding: 4.8rem;
+            li {
+                a {
+                    padding: 1rem 1.3rem;
+                    @include text(
+                        $font-muli-black,
+                        $fs-text-lv6,
+                        $tcl-white,
+                        0.4rem,
+                        uppercase
+                    );
+                    @include xxs() {
+                        padding: 1rem 0.6rem;
+                    }
+                }
+            }
+        }
+    }
+    &__copyright {
+        margin-top: 4.6rem;
+        text-align: center;
+        p {
+            @include text($font-body, $fs-body, $tcl-white, null, null, 2.4rem);
+        }
+    }
+}

@@ -1,0 +1,79 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+    @include xs() {
+        background-color: $color-black;
+    }
+    .container-fluid {
+        @include flex(null, space-between, center);
+        position: relative;
+        margin-top: 5rem;
+        @include xs() {
+            margin-top: unset;
+            height: $height-header;
+        }
+        .menu {
+            @include flex(null, center, center);
+            @include positionCenter('left');
+            @include xs() {
+                display: none;
+            }
+            &__item {
+                margin: 0 2.5rem;
+                &-link {
+                    @include text($font-muli-black, $fs-text-lv6, $tcl-white, 0.4rem, uppercase);
+                    &.logo-inner {
+                        text-align: center;
+                        display: block;
+
+                        img {
+                            margin: 0 auto;
+                            width: 5.2rem;
+                        }
+                        h1 {
+                            @include text($font-playair, $fs-text-lv4, $tcl-white, 0.1rem, uppercase);
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        .logo, .hamburger {
+            @include visible(true);
+            @include xs() {
+                @include visible(false);
+            }
+        }
+
+        .logo {
+            @include flexCenter();
+            img {
+                width: 3.2rem;
+            }
+        }
+
+        .hamburger {
+            position: relative;
+            width: 2.7rem;
+            height: 1.8rem;
+            &__line {
+                @include size(100%, 0.2rem);
+                background-color: $background-color;
+                display: block;
+                position: absolute;
+                right: 0;
+                &:nth-child(2) {
+                    width: 60%;
+                    @include positionCenter('top');
+                }
+                &:last-child {
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

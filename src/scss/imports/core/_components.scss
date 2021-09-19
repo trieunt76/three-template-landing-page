@@ -1,0 +1,114 @@
+/* ------------------------------------------------------ */
+/*                     Button Control                     */
+/* ------------------------------------------------------ */
+.btn-control {
+    border: 0.2rem solid $color-secondary;
+    @include flexCenter();
+    @include size(5.6rem);
+    cursor: pointer;
+    @include transition(all 0.3s);
+    i {
+        width: 2.4rem;
+        display: block;
+    }
+    &:hover {
+        @include transition(all 0.3s);
+        background-color: $color-secondary;
+        i {
+            svg {
+                fill: $background-color;
+                @include transition(all 0.3s);
+            }
+        }
+    }
+}
+
+/* ------------------------------------------------------ */
+/*                         Button                         */
+/* ------------------------------------------------------ */
+.btn {
+    padding: 2rem;
+    @include text(
+        $font-muli-black,
+        $fs-text-lv5,
+        $tcl-primary,
+        0.4rem,
+        uppercase
+    );
+    display: inline-block;
+    @include transition(all 0.3s);
+    &__primary {
+        &-outline {
+            border: 0.2rem solid $color-secondary;
+            &:hover {
+                background-color: $color-secondary;
+
+                color: $color-white;
+                @include transition(all 0.3s);
+            }
+        }
+    }
+}
+
+/* ------------------------------------------------------ */
+/*                      Textbox Title                     */
+/* ------------------------------------------------------ */
+.textbox {
+    &__title {
+        span {
+            @include text(
+                $font-muli-black,
+                $fs-text-lv2,
+                $tcl-primary,
+                2rem,
+                uppercase
+            );
+        }
+        h2 {
+            @include text(
+                $font-playair,
+                $fs-text-lv1,
+                $tcl-primary,
+                null,
+                uppercase
+            );
+        }
+
+        @include md() {
+            span {
+                font-size: 3.8rem;
+                letter-spacing: 1.4rem;
+            }
+
+            h2 {
+                font-size: 5.6rem;
+            }
+        }
+
+        @include sm() {
+            span {
+                font-size: 3rem;
+                letter-spacing: 1.4rem;
+            }
+
+            h2 {
+                font-size: 5rem;
+            }
+        }
+        @include xs() {
+            span {
+                font-size: 2rem;
+                letter-spacing: 1rem;
+            }
+
+            h2 {
+                font-size: 4rem;
+            }
+        }
+    }
+    &__desc {
+        p {
+            @include text($font-body, $fs-body, $tcl-body, null, null, 2.4rem);
+        }
+    }
+}

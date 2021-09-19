@@ -1,0 +1,17 @@
+a {
+    text-decoration: none;
+    outline: 0;
+}
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.--hidden {
+    display: none;
+}
+
+.--pd-section {
+    padding: 15rem 0;
+}

@@ -1,0 +1,803 @@
+.banner {
+    position: relative;
+    background: url('../images/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    --height-banner: 100vh;
+    @include size(100%, (var(--height-banner)));
+    @include sm() {
+        --height-banner: 86vh;
+    }
+    @include xs() {
+        margin-top: $height-header;
+        --height-banner: 70vh;
+    }
+    .container {
+        h2 {
+            @include positionCenter('both');
+            @include text(
+                $font-muli-black,
+                $fs-text-lv1,
+                $tcl-white,
+                2.5rem,
+                uppercase,
+                2.3rem
+            );
+            @include sm() {
+                font-size: 6rem;
+                letter-spacing: 2rem;
+            }
+            @include xs() {
+                font-size: 5rem;
+                letter-spacing: 2rem;
+            }
+            @include xs() {
+                font-size: 4.2rem;
+                letter-spacing: 1.6rem;
+            }
+            @include xxs() {
+                font-size: 3.8rem;
+                letter-spacing: 1.2rem;
+            }
+        }
+    }
+}
+
+// .feature {
+//     position: relative;
+//     --height-content: 72rem;
+//     overflow: hidden;
+
+//     @include sm() {
+//         &.--pd-section {
+//             padding: 10rem 0;
+//         }
+//     }
+
+//     @include xs() {
+//         &.--pd-section {
+//             padding: 8rem 0;
+//         }
+//     }
+
+//     .container {
+//         height: inherit;
+//         @include sm() {
+//             display: flex;
+//             flex-direction: column-reverse;
+//         }
+//     }
+//     &__control {
+//         @include positionCenter('top');
+//         left: -10rem;
+//         &-next,
+//         &-prev {
+//             display: flex;
+//             @include maxWidth(1233px) {
+//                 background-color: $color-secondary;
+//                 i {
+//                     svg {
+//                         fill: $color-white;
+//                     }
+//                 }
+//             }
+//         }
+//         &-prev {
+//             @include transform(rotate(180deg));
+//             margin-top: 2rem;
+//             @include maxWidth(1233px) {
+//                 margin-top: 0;
+//                 margin-right: -0.2rem;
+//             }
+//         }
+//         @include maxWidth(1330px) {
+//             left: -8rem;
+//         }
+//         @include maxWidth(1280px) {
+//             left: -7rem;
+//         }
+//         @include maxWidth(1251px) {
+//             left: -6rem;
+//         }
+//         @include maxWidth(1233px) {
+//             top: unset;
+//             bottom: 0;
+//             right: -5.5rem;
+//             left: unset;
+//             transform: unset;
+//             @include flex(row-reverse, center, center);
+//             z-index: 300;
+//         }
+//         @include sm() {
+//             right: 0;
+//         }
+
+//         @include xxs() {
+//             @include positionCenter('left');
+//         }
+//     }
+//     &__content {
+//         background-color: $color-white;
+
+//         height: var(--height-content);
+//         position: relative;
+//         &-text {
+//             @include size(100%);
+//             padding: 10rem 11rem;
+//             pointer-events: none;
+//             @include positionCenter('both');
+
+//             &.active {
+//                 // pointer-events: auto;
+//                 // opacity: 1;
+//                 .title,
+//                 .subtitle,
+//                 .type,
+//                 p,
+//                 .btn {
+//                     @include transition(all 0.6s);
+//                     @include transition-delay(0.9s);
+//                     opacity: 1;
+//                     pointer-events: auto;
+//                     @include transform(translateY);
+//                 }
+//             }
+
+//             .title,
+//             .subtitle,
+//             .type,
+//             p,
+//             .btn {
+//                 opacity: 0;
+//                 pointer-events: none;
+//             }
+
+//             .title,
+//             .subtitle {
+//                 @include text(
+//                     $font-playair,
+//                     $fs-text-lv2,
+//                     $tcl-primary,
+//                     null,
+//                     uppercase
+//                 );
+//                 @include xs() {
+//                     font-size: 3rem;
+//                 }
+//                 // padding-top: 2rem;
+//                 padding-bottom: 3rem;
+//                 @include sm() {
+//                     padding-top: 1rem;
+//                     padding-bottom: 2rem;
+//                 }
+//             }
+//             .type {
+//                 @include text(
+//                     $font-muli-black,
+//                     $fs-text-lv5,
+//                     $color-secondary,
+//                     0.4rem,
+//                     uppercase
+//                 );
+//                 padding-bottom: 3.5rem;
+//                 display: block;
+//                 @include sm() {
+//                     padding-bottom: 2rem;
+//                 }
+//             }
+//             p {
+//                 @include text(
+//                     $font-body,
+//                     $fs-body,
+//                     $tcl-body,
+//                     null,
+//                     null,
+//                     2.4rem
+//                 );
+//                 padding-bottom: 3rem;
+//                 @include sm() {
+//                     padding-bottom: 2rem;
+//                 }
+
+//                 @include xxs() {
+//                     padding-bottom: 1rem;
+//                 }
+//             }
+//             @include sm() {
+//                 width: 100% !important;
+//                 height: unset;
+//                 padding: 5rem 4rem;
+//             }
+
+//             @include xs() {
+//                 padding: 3.5 2rem;
+//             }
+
+//             @include xxs() {
+//                 text-align: center;
+//                 padding: 2rem 1rem;
+//                 .btn {
+//                     margin-bottom: 8rem;
+//                 }
+//             }
+//         }
+//     }
+//     &__img {
+//         @include positionCenter('top');
+//         right: 0;
+//         height: var(--height-content);
+//         &-item {
+//             @include size(100%);
+//             overflow: hidden;
+//             img {
+//                 min-width: 100%;
+//                 min-height: 100%;
+//             }
+//         }
+//         @include sm() {
+//             width: 100% !important;
+//             position: unset;
+//             transform: unset;
+//             --height-content: 38rem;
+//         }
+
+//         @include xs() {
+//             --height-content: 27rem;
+//         }
+//     }
+// }
+
+.project {
+    &__text {
+        .container {
+            @include flex(null, null, center);
+            @include sm() {
+                flex-direction: column;
+            }
+        }
+        &-title,
+        &-desc {
+            width: calc(100% / 2);
+            @include sm() {
+                width: 100%;
+            }
+        }
+        &-title {
+            border-left: 0.2rem solid $color-secondary;
+            padding-left: 4.5rem;
+            @include xs() {
+                padding-left: 2rem;
+            }
+        }
+        &-desc {
+            padding-left: 7rem;
+            @include sm() {
+                padding-left: unset;
+                margin-top: 2rem;
+            }
+        }
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        // grid-auto-rows: repeat(2, 4.2rem);
+        @include sm() {
+            &.--pd-section {
+                padding: 10rem 0;
+            }
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include xs() {
+            &.--pd-section {
+                padding: 8rem 0;
+            }
+        }
+        &-item {
+            position: relative;
+            overflow: hidden;
+            &::before {
+                content: '';
+                @include position(absolute, 0, 0, 0, 0);
+                background-color: $color-primary;
+                opacity: 0;
+                @include transition(opacity 0.35s);
+            }
+            img {
+                @include transition(transform 0.35s);
+                @include transform(scale(1.1));
+                width: 100%;
+            }
+            &:hover {
+                &::before {
+                    @include transition(opacity 0.35s);
+                    opacity: 0.7;
+                    z-index: 300;
+                }
+                img {
+                    @include transform(scale(1));
+                    @include transition(transform 0.35s);
+                }
+                .content {
+                    opacity: 1;
+                    transition: opacity 0.35s;
+                    &::before {
+                        opacity: 1;
+                        @include transform(scale(1));
+                        transition: opacity 0.35s, transform 0.35s;
+                    }
+                }
+            }
+            .content {
+                @include position(absolute, 5rem, 5rem, 5rem, 5rem);
+                z-index: 300;
+                opacity: 0;
+                transition: opacity 0.35s;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include size(100%);
+                    border: 0.2rem solid $color-secondary;
+                    opacity: 0;
+                    @include transform(scale(1.2));
+                    transition: opacity 0.35s, transform 0.35s;
+                }
+                &__text {
+                    @include positionCenter('both');
+                    @include flexCenter();
+                    flex-direction: column;
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                    span {
+                        @include text(
+                            $font-muli-black,
+                            2rem,
+                            $color-secondary,
+                            1rem,
+                            uppercase
+                        );
+                    }
+                    h3 {
+                        @include text(
+                            $font-playair,
+                            $fs-text-lv2,
+                            $tcl-white,
+                            null,
+                            uppercase
+                        );
+                        margin-top: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about {
+    position: relative;
+    --height-content: 72rem;
+    .container {
+        flex-direction: row-reverse;
+        display: flex;
+
+        @include sm() {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__content,
+    &__img {
+        height: var(--height-content);
+
+        @include sm() {
+            width: 100% !important;
+        }
+    }
+    &__content {
+        position: relative;
+        background-color: $color-white;
+        @include flexCenter();
+        flex-direction: column;
+        @include sm() {
+            height: auto;
+            padding-top: 6rem;
+            padding-bottom: 12rem;
+        }
+        &-item {
+            max-width: 31rem;
+            &:not(:last-child) {
+                margin-bottom: 5.4rem;
+            }
+            @include sm() {
+                max-width: 70%;
+                &:not(:last-child) {
+                    margin-bottom: unset;
+                }
+                margin-bottom: 3rem !important;
+            }
+            h3 {
+                @include text(
+                    $font-muli-black,
+                    $fs-text-lv5,
+                    $tcl-primary,
+                    0.4rem,
+                    uppercase,
+                    2.4rem
+                );
+            }
+            p {
+                @include text(
+                    $font-body,
+                    $fs-body,
+                    $tcl-body,
+                    null,
+                    null,
+                    2.4rem
+                );
+            }
+        }
+        .btn {
+            position: absolute;
+            @include transform(rotate(90deg));
+            right: -15rem;
+
+            @include maxWidth(1310px) {
+                right: -12rem;
+            }
+
+            @include maxWidth(1251px) {
+                @include positionCenter('left');
+                bottom: 0;
+                right: unset;
+                margin-bottom: 5rem;
+            }
+        }
+    }
+    &__img {
+        @include positionCenter('top');
+        left: 0;
+        img {
+            min-width: 100%;
+            min-height: 100%;
+            @include size(100%);
+        }
+        &-text {
+            @include positionCenter('both');
+            text-align: center;
+            h2 {
+                @include text(
+                    $font-muli-black,
+                    $fs-text-lv2,
+                    $tcl-white,
+                    1rem,
+                    uppercase
+                );
+            }
+            h3 {
+                @include text(
+                    $font-playair,
+                    $fs-text-lv1,
+                    $tcl-white,
+                    null,
+                    uppercase
+                );
+                margin-top: 2rem;
+            }
+            @include sm() {
+                h2 {
+                    font-size: 3rem;
+                }
+                h3 {
+                    font-size: 6rem;
+                }
+            }
+        }
+        @include sm() {
+            position: relative;
+            left: unset;
+            top: unset;
+            @include transform(unset);
+            --height-content: 38rem;
+        }
+        @include xs() {
+            --height-content: 27rem;
+        }
+    }
+}
+
+.superstar {
+    @include sm() {
+        &.--pd-section {
+            padding: 10rem 0;
+        }
+    }
+    &__text {
+        .container {
+            @include flex(null, null, center);
+            @include sm() {
+                flex-direction: column;
+            }
+        }
+        &-title,
+        &-desc {
+            width: calc(100% / 2);
+            @include sm() {
+                width: 100%;
+            }
+        }
+        &-title {
+            border-left: 0.2rem solid $color-secondary;
+            padding-left: 4.5rem;
+            @include xs() {
+                padding-left: 2rem;
+            }
+        }
+        &-desc {
+            padding-left: 7rem;
+            @include sm() {
+                padding-left: unset;
+                margin-top: 2rem;
+            }
+        }
+        margin-bottom: 14.4rem;
+        @include sm() {
+            margin-bottom: 8rem;
+        }
+    }
+    &__list {
+        position: relative;
+        display: flex;
+        &-item {
+            position: relative;
+            width: calc(100% / 3);
+
+            @include xs() {
+                width: 100%;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            &::before {
+                content: '';
+                @include position(absolute, 0, null, null, 0);
+                @include size(100%);
+                background-color: #1c565b;
+                opacity: 0;
+                @include transition(all 0.35s);
+            }
+
+            .content {
+                @include position(absolute, 5rem, 5rem, 5rem, 5rem);
+                @include transition(all 0.35s);
+                &::before {
+                    content: '';
+                    @include position(absolute, 0, null, null, 0);
+                    @include size(100%);
+                    border-left: 0.1rem solid $color-secondary;
+                    border-right: 0.1rem solid $color-secondary;
+                    @include transform(scale(1, 0));
+                    @include transition(all 0.35s);
+                }
+                &::after {
+                    content: '';
+                    @include position(absolute, 0, null, null, 0);
+                    @include size(100%);
+                    border-top: 0.1rem solid $color-secondary;
+                    border-bottom: 0.1rem solid $color-secondary;
+                    @include transform(scale(0, 1));
+                    @include transition(all 0.35s);
+                }
+                @include sm() {
+                    @include position(absolute, 1rem, 1rem, 1rem, 1rem);
+                }
+                .content__text {
+                    @include positionCenter('both');
+                    text-align: center;
+                    opacity: 0;
+                    @include transition(all 0.35s);
+                    z-index: 300;
+                    .job {
+                        @include text(
+                            $font-muli-black,
+                            $fs-text-lv4,
+                            $color-secondary,
+                            0.9rem,
+                            uppercase
+                        );
+                    }
+                    .name {
+                        @include text(
+                            $font-playair,
+                            $fs-text-lv3,
+                            $tcl-white,
+                            null,
+                            uppercase
+                        );
+                        padding: 1.2rem 0;
+                    }
+                    .social {
+                        @include flex(null, center);
+                        li {
+                            a {
+                                display: block;
+                                padding: 0.7rem;
+                                img {
+                                    @include size(2.1rem);
+                                }
+                                &:hover {
+                                    img {
+                                        filter: brightness(0) invert(1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @include sm() {
+                        .job {
+                            font-size: 1.2rem;
+                        }
+                        .name {
+                            font-size: 2.2rem;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .content {
+                    @include transition(all 0.35s);
+                    &::before,
+                    &::after {
+                        @include transition(all 0.35s);
+                        @include transform(scale(1, 1));
+                    }
+                    &__text {
+                        opacity: 1;
+                        @include transition(all 0.35s);
+                    }
+                }
+                &::before {
+                    opacity: 0.8;
+                    @include transition(all 0.35s);
+                }
+            }
+        }
+    }
+    &__control {
+        @include positionCenter('top');
+        right: -10rem;
+        @include maxWidth(1310px) {
+            right: -7rem;
+        }
+        @include maxWidth(1251px) {
+            right: 0;
+            top: -5.6rem;
+            @include transform(unset);
+            @include flex(row-reverse);
+        }
+
+        &-next,
+        &-prev {
+            display: flex;
+            @include maxWidth(1233px) {
+                background-color: $color-secondary;
+                i {
+                    svg {
+                        fill: $color-white;
+                    }
+                }
+            }
+        }
+        &-prev {
+            @include transform(rotate(180deg));
+            margin-top: 2rem;
+            @include maxWidth(1251px) {
+                margin-top: 0;
+                margin-right: -0.2rem;
+            }
+        }
+    }
+}
+
+.address {
+    position: relative;
+    --height-content: 72rem;
+    margin-bottom: 15rem;
+    @include sm() {
+        --height-content: 27rem;
+        margin-bottom: 10rem;
+    }
+    .container {
+        height: inherit;
+    }
+    &__content,
+    &__map {
+        height: var(--height-content);
+        @include sm() {
+            width: 100% !important;
+        }
+    }
+    &__content {
+        background-color: $color-white;
+        padding-left: 13rem;
+        padding-right: 10rem;
+        @include flex(column, center);
+        .title {
+            @include text(
+                $font-playair,
+                $fs-text-lv2,
+                $tcl-primary,
+                null,
+                uppercase
+            );
+            @include xs() {
+                font-size: 3rem;
+            }
+        }
+        .desc {
+            @include text($font-body, $fs-body, $tcl-body, null, null, 2.4rem);
+            padding: 3.8rem 0;
+        }
+        .contact {
+            &__item {
+                margin-bottom: 3.4rem;
+                h4 {
+                    @include text(
+                        $font-muli-black,
+                        $fs-text-lv5,
+                        $tcl-primary,
+                        0.4rem,
+                        uppercase
+                    );
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        .btn {
+            width: max-content;
+        }
+        @include sm() {
+            height: auto;
+            padding: 5rem 7rem;
+        }
+    }
+    &__map {
+        @include positionCenter('top');
+        right: 0;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include size(100%);
+            background-color: #1d535b;
+            opacity: 0.8;
+        }
+        .local {
+            position: absolute;
+            left: 9rem;
+            bottom: 10rem;
+            h5 {
+                @include text($font-muli-black, $fs-body, $tcl-white);
+                line-height: 2.4rem;
+            }
+            p {
+                @include text($font-body, $fs-body, $tcl-white);
+            }
+        }
+        @include sm() {
+            position: relative;
+            right: unset;
+            top: unset;
+            @include transform(unset);
+            --height-content: 38rem;
+        }
+
+        @include xs() {
+            --height-content: 27rem;
+        }
+    }
+}

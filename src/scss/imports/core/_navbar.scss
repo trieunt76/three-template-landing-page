@@ -1,0 +1,21 @@
+.navbar {
+    @include position(fixed, $height-header, 0, 0, 0);
+    background-color: $color-black;
+    z-index: 999;
+    @include flex(column, null, center);
+    padding-top: 10rem;
+    @include transform(translateX(-100%));
+    @include transition(all 0.3s);
+    @include visible(true);
+    a {
+        @include text(
+            $font-muli-black,
+            $fs-body,
+            $color-white,
+            null,
+            uppercase
+        );
+        display: block;
+        padding: 2rem;
+    }
+}

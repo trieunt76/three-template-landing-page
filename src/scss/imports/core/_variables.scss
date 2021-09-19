@@ -1,0 +1,46 @@
+/* ----------- Grid Media Queries Breakpoints ----------- */
+$xxs-min: 576px; // Option change
+$xs-min: 768px; // No change
+$sm-min: 992px; // No change
+$md-min: 1200px; // No change
+$lg-min: 1600px; // Option change
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+
+/* -------------------- Boxed Layout -------------------- */
+$container-width: 1140px;
+$container-max-width: 100%;
+
+$height-header: 8rem;
+
+/* ----------------------- Colors ----------------------- */
+$color-primary: #290a59;
+$color-secondary: #00e558;
+$color-white: #fff;
+$color-black: #000;
+
+$background-color: #e9ecef;
+
+/* ------------------------ Fonts ----------------------- */
+$font-body: "Muli-Light", sans-serif;
+$font-muli-black: "Muli-Black", sans-serif;
+$font-playair: "Playfair-Black", sans-serif;
+
+/* ---------------------- Font Size --------------------- */
+$fs-body: 1.6rem;
+
+$fs-text-lv1: 8rem;
+$fs-text-lv2: 4rem;
+$fs-text-lv3: 3rem;
+$fs-text-lv4: 1.5rem;
+$fs-text-lv5: 1.3rem;
+$fs-text-lv6: 1rem;
+
+/* --------------------- Text Color --------------------- */
+$tcl-body: #6d6081;
+$tcl-white: #fff;
+$tcl-primary: #290a59;
